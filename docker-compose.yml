@@ -40,7 +40,7 @@ services:
       - ./scripts:/scripts
   
   k6-browser:
-    image: browser-k6:latest
+    image: welkin172/browser-k6:latest
     networks:
       - k6
     environment:
