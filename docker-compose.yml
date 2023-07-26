@@ -45,6 +45,8 @@ services:
       - k6
     environment:
       - K6_BROWSER_ENABLED=true
-      - XK6_HEADLESS=true
+      - XK6_HEADLESS=false
+      - DISPLAY=$DISPLAY
     volumes:
       - ./scripts:/scripts
+      - /tmp/.X11-unix:/tmp/.X11-unix
