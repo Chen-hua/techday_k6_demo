@@ -17,7 +17,7 @@ export default async function() {
   try {
     // Goto front page, find login link and click it
     await page.goto('https://test.k6.io/', { waitUntil: 'networkidle' });
-    page.screenshot({ path: '/scripts/screenshots/browser.png' });
+    page.screenshot({ path: '/scripts/screenshots/login_p1.png' });
 
     await Promise.all([
       page.waitForNavigation(),
@@ -36,6 +36,8 @@ export default async function() {
     check(page, {
       'header': page.locator('h2').textContent() == 'Welcome, admin!',
     });
+    page.screenshot({ path: '/scripts/screenshots/login_p2.png' });
+
   } finally {
     page.close();
     browser.close();
