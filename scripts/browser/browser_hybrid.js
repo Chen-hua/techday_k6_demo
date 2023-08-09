@@ -32,6 +32,7 @@ export async function browser() {
       'checkbox is checked':
         page.locator('#checkbox-info-display').textContent() === 'Thanks for checking the box',
     });
+    page.screenshot({ path: '/scripts/screenshots/hybrid_p1.png' });
   } finally {
     page.close();
     browser.close();
